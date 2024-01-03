@@ -18,6 +18,19 @@ cv.imshow('Blur', blur)
 canny = cv.Canny(blur, 125, 175)
 cv.imshow('Canny Edges', canny)
 
+'''
+# Refer: https://docs.opencv.org/3.4/db/df6/tutorial_erosion_dilatation.html
+# Dilation
+dilated = cv.dilate(src= canny, kernel= (3,3), iterations= 5)
+cv.imshow("Food",dilated)
+
+Note: Erosion is reverse operation of dilation
+
+# Erosion
+eroded = cv.erode(src= dilated, kernel= (3,3), iterations= 5)
+cv.imshow("Eroded",eroded)
+'''
+
 # ret, thresh = cv.threshold(gray, 125, 255, cv.THRESH_BINARY)
 # cv.imshow('Thresh', thresh)
 
