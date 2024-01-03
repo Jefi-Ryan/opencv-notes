@@ -26,16 +26,7 @@ cv.imshow('Dilated', dilated)
 eroded = cv.erode(dilated, (7,7), iterations=3)
 cv.imshow('Eroded', eroded)
 
-# Resize
-# Refer: https://www.geeksforgeeks.org/image-resizing-using-opencv-python
-# This method suitable for video, image, live video
-resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
-cv.imshow('Resized', resized)
-
-# Cropping
-crop = img[350:, :50] # image is just an array of values (pixels) so to crop the image we perform array slicing
-cv.imshow("Cropped", crop)
-
+# To crop live video
 # This method works only with live video
 capture = cv.VideoCapture(0)
 capture.set(3,width) # 3 refers width
