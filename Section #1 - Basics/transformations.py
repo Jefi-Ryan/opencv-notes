@@ -39,6 +39,8 @@ rotated_rotated = rotate(img, -90)
 cv.imshow('Rotated Rotated', rotated_rotated)
 
 # Resizing
+# Refer: https://www.geeksforgeeks.org/image-resizing-using-opencv-python
+# This method suitable for video, image, live video
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
 
@@ -47,8 +49,7 @@ flip = cv.flip(img, -1)
 cv.imshow('Flip', flip)
 
 # Cropping
-cropped = img[200:400, 300:400]
+cropped = img[200:400, 300:400] # image is just an array of values (pixels) so to crop the image we perform array slicing
 cv.imshow('Cropped', cropped)
-
 
 cv.waitKey(0)
