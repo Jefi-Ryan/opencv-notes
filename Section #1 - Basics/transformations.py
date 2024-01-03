@@ -8,6 +8,7 @@ cv.imshow('Park', img)
 
 # Translation
 def translate(img, x, y):
+    # Refer: https://www.geeksforgeeks.org/image-translation-using-opencv-python/
     transMat = np.float32([[1,0,x],[0,1,y]])
     dimensions = (img.shape[1], img.shape[0])
     return cv.warpAffine(img, transMat, dimensions)
