@@ -34,12 +34,6 @@ cv.imshow('Resized', resized)
 
 # This method works only with live video
 capture = cv.VideoCapture(0)
-'''
-VideoCapture parameter can be: 
-name of video file (eg. video.avi)
-or image sequence (eg. img_%02d.jpg, which will read samples like img_00.jpg, img_01.jpg, img_02.jpg, ...)
-or URL of video stream (eg. protocol://host:port/script_name?script_params|auth)
-'''
 capture.set(3,width) # 3 refers width
 capture.set(4,height) # 4 refers height
 '''
