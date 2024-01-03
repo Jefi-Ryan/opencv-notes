@@ -30,6 +30,6 @@ while True:
             break            
     else:
         break
-
-capture.release()
-cv.destroyAllWindows()
+# Refer: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
+capture.release()  # release the pointer to the video file
+cv.destroyAllWindows() # destroy all frames
