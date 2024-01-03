@@ -10,6 +10,13 @@ cv.waitKey(0)
 # Reading Videos
 capture = cv.VideoCapture('../Resources/Videos/dog.mp4')
 
+'''
+VideoCapture parameter can be: 
+name of video file (eg. video.avi)
+or image sequence (eg. img_%02d.jpg, which will read samples like img_00.jpg, img_01.jpg, img_02.jpg, ...)
+or URL of video stream (eg. protocol://host:port/script_name?script_params|auth)
+'''
+
 while True:
     isTrue, frame = capture.read()
     
