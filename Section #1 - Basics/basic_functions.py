@@ -36,20 +36,6 @@ cv.imshow('Resized', resized)
 capture = cv.VideoCapture(0)
 capture.set(3,width) # 3 refers width
 capture.set(4,height) # 4 refers height
-'''
-# To play a video
-Refer: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
-
-while True:
-    isTrue, frame = capture.read()
-    cv.imshow("video",frame)
-
-    if cv.waitKey(1) == ord("d"):
-        break
-
-capture.release()  # release the pointer to the video file
-cv.destroyAllWindows() # destroy all frames
-'''
 
 # Cropping
 cropped = img[50:200, 200:400]
