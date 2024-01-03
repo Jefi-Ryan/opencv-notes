@@ -27,9 +27,35 @@ eroded = cv.erode(dilated, (7,7), iterations=3)
 cv.imshow('Eroded', eroded)
 
 # Resize
-# Refer this: https://www.geeksforgeeks.org/image-resizing-using-opencv-python
+# Refer: https://www.geeksforgeeks.org/image-resizing-using-opencv-python
+# This method suitable for video, image, live video
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
+
+# This method works only with live video
+capture = cv.VideoCapture(0)
+'''
+VideoCapture parameter can be: 
+name of video file (eg. video.avi)
+or image sequence (eg. img_%02d.jpg, which will read samples like img_00.jpg, img_01.jpg, img_02.jpg, ...)
+or URL of video stream (eg. protocol://host:port/script_name?script_params|auth)
+'''
+capture.set(3,width) # 3 refers width
+capture.set(4,height) # 4 refers height
+'''
+# To play a video
+Refer: https://docs.opencv.org/4.x/dd/d43/tutorial_py_video_display.html
+
+while True:
+    isTrue, frame = capture.read()
+    cv.imshow("video",frame)
+
+    if cv.waitKey(1) == ord("d"):
+        break
+
+capture.release()  # release the pointer to the video file
+cv.destroyAllWindows() # destroy all frames
+'''
 
 # Cropping
 cropped = img[50:200, 200:400]
