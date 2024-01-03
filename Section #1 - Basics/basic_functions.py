@@ -32,6 +32,10 @@ cv.imshow('Eroded', eroded)
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC)
 cv.imshow('Resized', resized)
 
+# Cropping
+crop = img[350:, :50] # image is just an array of values (pixels) so to crop the image we perform array slicing
+cv.imshow("Cropped", crop)
+
 # This method works only with live video
 capture = cv.VideoCapture(0)
 capture.set(3,width) # 3 refers width
