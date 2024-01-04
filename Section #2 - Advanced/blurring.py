@@ -5,6 +5,8 @@ import cv2 as cv
 img = cv.imread('../Resources/Photos/cats.jpg')
 cv.imshow('Cats', img)
 
+# Refer: https://docs.opencv.org/4.x/d4/d13/tutorial_py_filtering.html
+
 # Averaging
 average = cv.blur(img, (3,3))
 cv.imshow('Average Blur', average)
