@@ -18,6 +18,10 @@ median = cv.medianBlur(img, 3)  # reduces noise effectively than gaussian and av
 cv.imshow('Median Blur', median)
 
 # Bilateral
+# preserves shape boundary or border
+# parameter explanation: 
+# sigmaColor : tells how much of neighboring colors influences the center pixel
+# sigmaSpace : tells how much far pixel gets affected by the result of current pixel blur
 bilateral = cv.bilateralFilter(img, 10, 35, 25) # reduces noise effectively than gaussian, average and median. Used in many advanced computer vision projects
 cv.imshow('Bilateral', bilateral)
 
